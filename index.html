@@ -4,8 +4,54 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Encontre sua Célula - IBA Caxias</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'sans-serif'],
+            serif: ['Merriweather', 'serif'],
+          },
+          colors: {
+            'brand-primary': {
+              light: '#4A0E6C',
+              DEFAULT: '#4A0E6C',
+              dark: '#6D28A9'
+            },
+            'brand-accent': {
+              light: '#D4AF37',
+              DEFAULT: '#D4AF37',
+              dark: '#E0C56E'
+            },
+            'brand-bg': {
+              light: '#F8F7FA',
+              dark: '#12121A'
+            },
+            'brand-surface': {
+              light: '#FFFFFF',
+              dark: '#1E1E2D'
+            },
+            'brand-text': {
+              light: '#2D3748',
+              dark: '#EAEAEA'
+            },
+            'brand-text-secondary': {
+              light: '#718096',
+              dark: '#A0AEC0'
+            }
+          }
+        }
+      }
+    }
+  </script>
   <script type="importmap">
 {
   "imports": {
@@ -15,21 +61,8 @@
   }
 }
 </script>
-<script>
-    // Anti-flicker script for dark mode
-    (function() {
-      try {
-        const preference = localStorage.getItem('theme');
-        if (preference === 'dark' || (!preference && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-          document.documentElement.classList.add('dark');
-        }
-      } catch (e) {
-        console.error('Could not apply dark mode preference', e);
-      }
-    })();
-  </script>
 </head>
-  <body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+  <body class="bg-brand-bg-light dark:bg-brand-bg-dark font-sans transition-colors duration-300">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>

@@ -29,15 +29,19 @@ const DEVOTIONALS = [
 
 const Devotional: React.FC = () => {
   const devotional = useMemo(() => {
-    const randomIndex = Math.floor(Math.random() * DEVOTIONALS.length);
-    return DEVOTIONALS[randomIndex];
+    // Show a new verse each day of the year
+    const dayOfYear = Math.floor((new Date().getTime() - new Date(new Date().getFullYear(), 0, 0).getTime()) / (1000 * 60 * 60 * 24));
+    return DEVOTIONALS[dayOfYear % DEVOTIONALS.length];
   }, []);
 
   return (
-    <section className="bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-800 dark:to-blue-600 text-white p-6 rounded-xl shadow-lg mb-8 text-center">
-      <h2 className="text-2xl font-bold mb-3">Palavra do Dia</h2>
-      <p className="italic text-lg mb-4">"{devotional.text}"</p>
-      <p className="font-semibold text-blue-100 dark:text-blue-200">{devotional.verse}</p>
+    <section className="bg-gradient-to-br from-brand-primary-light to-purple-600 dark:from-brand-primary-dark dark:to-purple-800 text-white p-6 sm:p-8 rounded-2xl shadow-xl mb-10 relative overflow-hidden text-center">
+       <div className="absolute -top-10 -right-10 w-32 h-32 text-white/10">
+          <i className="fas fa-cross text-9xl transform rotate-12"></i>
+       </div>
+      <h2 className="text-2xl font-serif font-bold mb-3 relative z-10">Palavra do Dia</h2>
+      <p className="italic text-lg mb-4 opacity-90 max-w-3xl mx-auto relative z-10">"{devotional.text}"</p>
+      <p className="font-semibold text-white/80 relative z-10">{devotional.verse}</p>
     </section>
   );
 };
