@@ -1,0 +1,7 @@
+{
+  "name": "Encontre sua Célula - IBA Caxias",
+  "description": "Um aplicativo para ajudar visitantes e membros da Igreja Batista Atitude em Duque de Caxias a encontrar grupos de células próximos. Inclui um painel administrativo para gerenciar as células.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
