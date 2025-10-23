@@ -34,10 +34,10 @@ const Devotional: React.FC = () => {
   }, []);
 
   return (
-    <section className="bg-gradient-to-r from-blue-700 to-blue-500 text-white p-6 rounded-xl shadow-lg mb-8 text-center">
+    <section className="bg-gradient-to-r from-blue-600 to-blue-400 dark:from-blue-800 dark:to-blue-600 text-white p-6 rounded-xl shadow-lg mb-8 text-center">
       <h2 className="text-2xl font-bold mb-3">Palavra do Dia</h2>
       <p className="italic text-lg mb-4">"{devotional.text}"</p>
-      <p className="font-semibold text-blue-100">{devotional.verse}</p>
+      <p className="font-semibold text-blue-100 dark:text-blue-200">{devotional.verse}</p>
     </section>
   );
 };

@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import VisitorView from './views/VisitorView';
 import AdminView from './views/AdminView';
@@ -11,7 +10,7 @@ const App: React.FC = () => {
   const cellsHook = useCells();
 
   return (
-    <div className="min-h-screen bg-gray-50 text-gray-800 font-sans">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-800 dark:text-gray-200 font-sans">
       <Header currentView={view} setView={setView} />
       <main className="p-4 sm:p-6 md:p-8">
         {view === 'visitor' ? (
@@ -20,7 +19,7 @@ const App: React.FC = () => {
           <AdminView cellsHook={cellsHook} />
         )}
       </main>
-      <footer className="text-center p-4 text-gray-500 text-sm">
+      <footer className="text-center p-4 text-gray-500 dark:text-gray-400 text-sm">
         <p>&copy; {new Date().getFullYear()} Igreja Batista Atitude - Duque de Caxias. Todos os direitos reservados.</p>
       </footer>
     </div>
